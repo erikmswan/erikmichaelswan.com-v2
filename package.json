@@ -2,7 +2,7 @@
   "name": "erikmichaelswan.com-v2",
   "version": "2.0.0",
   "description": "My personal website, v2.",
-  "main": "gulpfile.js",
+  "main": "./src/client/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:erikmswan/erikmichaelswan.com-v2.git"
