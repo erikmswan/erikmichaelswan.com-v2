@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git@github.com:erikmswan/erikmichaelswan.com-v2.git"
   },
+  "scripts": {
+    "start" : "npm run build && webpack-dev-server --inline --colors --content-base dist/client/",
+    "build" : "webpack"
+  },
   "dependencies": {
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
