@@ -5,14 +5,36 @@
         "es6": true,
         "node": true
     },
+    "globals": {
+        "ga": true,
+        "mapboxgl": true,
+        "turf": true,
+        "describe": true,
+        "it": true,
+        "expect": true,
+        "sinon": true,
+        "google": true
+    },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
-            "experimentalObjectRestSpread": true
+            "experimentalObjectRestSpread": true,
+            "jsx": true
         },
         "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "settings": {
+         "react": {
+            "createClass": "createClass", // Regex for Component Factory to use, default to "createClass"
+            "pragma": "React",  // Pragma to use, default to "React"
+            "version": "15.0" // React version, default to the latest React stable release
+        }
     },
     "rules": {
         "no-var": [
@@ -46,6 +68,7 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "react/no-deprecated": "error"
     }
 }
