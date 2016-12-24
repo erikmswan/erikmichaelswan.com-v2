@@ -1,11 +1,14 @@
 
+import '../../styles/main.scss';
 import React from 'react';
 
 const App = React.createClass({
 
     render() {
         return (
-            <div className='it-works' />    
+            <h1>
+                Hello world!
+            </h1>
         );
     }
 });

@@ -1,7 +1,8 @@
-const path              = require('path');
-const autoprefixer      = require('autoprefixer');
-const env               = require('./lib/env');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path         = require('path');
+const autoprefixer = require('autoprefixer');
+const env          = require('./lib/env');
+const HtmlPlugin   = require('html-webpack-plugin');
+const CopyPlugin   = require('copy-webpack-plugin');
 
 let config = {
     entry  : './src/client/index.js',
@@ -25,8 +26,7 @@ let config = {
                 }
             },
             {
-                test    : /\.[scss|sass]$/,
-                exclude : /node_modules/,
+                test    : /\.scss$/,
                 loaders : ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
             {
@@ -74,12 +74,22 @@ let config = {
         })
     ],
     plugins : [
-        new HtmlWebpackPlugin({
+        new HtmlPlugin({
             title    : env.shared.appTitle,
             template : path.resolve(__dirname, 'src/client') + '/index.ejs',
-            favicon  : path.resolve(__dirname, 'assets/img') + '/favicon.ico',
+            // favicon  : path.resolve(__dirname, 'assets/img') + '/favicon.ico',
             inject   : 'body'
-        })
+        }),
+        new CopyPlugin([
+            {
+                from : path.resolve(__dirname, 'src/client/assets'),
+                to   : 'assets'
+            },
+            {
+                from : path.resolve(__dirname, 'src/client/fonts'),
+                to   : 'assets/fonts'
+            }
+        ])
     ]
 };
 
