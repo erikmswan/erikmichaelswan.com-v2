@@ -2,7 +2,6 @@ const path         = require('path');
 const autoprefixer = require('autoprefixer');
 const env          = require('./lib/env');
 const HtmlPlugin   = require('html-webpack-plugin');
-const CopyPlugin   = require('copy-webpack-plugin');
 
 let config = {
     entry  : './src/client/index.js',
@@ -42,8 +41,8 @@ let config = {
                 loader : 'url-loader?limit=10000&mimetype=image/png'
             },
             {
-                test   : /\.svg$/,
-                loader : 'url-loader?limit=10000&mimetype=image/svg+xml'
+                test   : /\assets\/.*.svg$/,
+                loader : 'url-loader?limit=0&mimetype=image/svg+xml'
             },
             {
                 test   : /\.otf$/,
@@ -79,17 +78,7 @@ let config = {
             template : path.resolve(__dirname, 'src/client') + '/index.ejs',
             // favicon  : path.resolve(__dirname, 'assets/img') + '/favicon.ico',
             inject   : 'body'
-        }),
-        new CopyPlugin([
-            {
-                from : path.resolve(__dirname, 'src/client/assets'),
-                to   : 'assets'
-            },
-            {
-                from : path.resolve(__dirname, 'src/client/fonts'),
-                to   : 'assets/fonts'
-            }
-        ])
+        })
     ]
 };
 
