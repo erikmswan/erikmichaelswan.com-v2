@@ -1,11 +1,14 @@
+
+// @flow
+
 import { combineReducers,
          createStore } from 'redux';
-import page            from './Page/Page';
+import { pageReducer }        from 'reducers';
 
 const reducers = combineReducers({
-    page
+    page : pageReducer
 });
 
 const store = createStore(reducers);
 
-export default store;
+export { store };
