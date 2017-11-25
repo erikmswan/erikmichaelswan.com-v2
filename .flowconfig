@@ -1,6 +1,6 @@
 
 [version]
-^0.57.3
+^0.59.0
 
 [include]
 ./src/*

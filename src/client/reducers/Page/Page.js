@@ -7,7 +7,7 @@ import type {
     PageState,
     SetPage } from 'reducers/types';
 import { createReducer } from 'reducers/createReducer';
-import _ from 'lodash'
+import _ from 'lodash';
 import { constants } from 'lib/env';
 
 

@@ -22,6 +22,16 @@ export type Handler<S> = {
 };
 
 
+/*******************
+* Page Reducer
+********************/
+
+export type PageState = {
+    +page : {}
+};
+
+export type SetPage = {};
+
 
 /*******************
 * Global object type
@@ -31,5 +41,5 @@ export type Handler<S> = {
 // It will also serve as documentation as to what state 'segmentations' are available.
 
 export type State = {
-    // nothing yet
+    page: PageState
 };

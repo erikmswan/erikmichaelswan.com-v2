@@ -9,7 +9,7 @@ import { constants } from 'lib/env';
 
 // saving redux state for hot reloading
 // save individual stores
-if (NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
     store.subscribe(() => {
         window[constants.storage] = store.getState();
     });
@@ -29,15 +29,13 @@ export class App extends React.Component<Props> {
 
     constructor(props: Props): void {
         super(props);
-        const test: string = 12;
-        test;
     }
 
     render(): React.Node {
         return (
             <div>
                 <h1>
-                    Hello, World! whaaaa
+                    Erik Michael Swan
                 </h1>
             </div>
         );
