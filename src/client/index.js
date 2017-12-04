@@ -5,7 +5,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-import * as log from 'loglevel';
+import log from 'loglevel';
 import { store } from './reducers/store';
 import { App } from './components/App/App';
 

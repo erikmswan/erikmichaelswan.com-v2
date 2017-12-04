@@ -1,9 +1,10 @@
 
 import { createStore,
-         compose,
-         applyMiddleware }       from 'redux';
-import thunk                     from 'redux-thunk';
-import reducers                  from '../rootReducer';
+    compose,
+    applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { constants } from 'lib/env';
+import reducers from '../rootReducer';
 
 
 // apply middleware
@@ -29,6 +30,4 @@ function configureStore(initialState) {
     return store;
 }
 
-const configuredStore = configureStore(window[constants.storage] || {});
-
-export { configuredStore };
+export const configuredStore = configureStore(window[constants.storage] || {});
