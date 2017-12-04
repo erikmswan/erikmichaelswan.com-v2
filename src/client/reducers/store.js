@@ -3,7 +3,7 @@
 
 import { combineReducers,
          createStore } from 'redux';
-import { pageReducer }        from 'reducers';
+import { pageReducer } from 'reducers';
 
 const reducers = combineReducers({
     page : pageReducer
