@@ -5,6 +5,7 @@ import 'styles/main.scss';
 import * as React from 'react';
 import { store } from 'reducers';
 import { constants } from 'lib/env';
+import { Masthead } from 'components';
 
 
 // saving redux state for hot reloading
@@ -34,9 +35,7 @@ export class App extends React.Component<Props> {
     render(): React.Node {
         return (
             <div>
-                <h1>
-                    Erik Michael Swan
-                </h1>
+                <Masthead />
             </div>
         );
     }
