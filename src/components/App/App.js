@@ -2,10 +2,10 @@
 // @flow
 
 import 'styles/main.scss';
+import './App.scss';
 import * as React from 'react';
 import { store } from 'reducers';
 import { constants } from 'lib/env';
-import { Masthead } from 'components';
 
 
 // saving redux state for hot reloading
@@ -34,8 +34,12 @@ export class App extends React.Component<Props> {
 
   render(): React.Node {
     return (
-      <div>
-        <Masthead />
+      <div className="app-container">
+        <h1>
+          Hi, I'm Erik&nbsp;Michael&nbsp;Swan
+        </h1>
+        <h2>I make user interfaces for the web.</h2>
+        <a href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
       </div>
     );
   }

@@ -1,0 +1,42 @@
+@import 'globals.scss';
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  
+  h1 {
+    margin-top: 0;
+  }
+  
+  h1, h2, a {
+    opacity: 0;
+    animation: fade-up 3s cubic-bezier(0, 1.2, 1, 1) forwards;
+  }
+
+  h2 {
+    animation-delay: 1.5s;
+  }
+
+  a {
+    animation-delay: 2.5s;
+  }
+}

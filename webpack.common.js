@@ -55,7 +55,7 @@ let config = {
                     }, {
                         loader: 'sass-loader',
                         options: {
-                            includePaths: [path.resolve(__dirname, 'src/common/styles')]
+                            includePaths: ['src/styles']
                         }
                     }
                 ]
