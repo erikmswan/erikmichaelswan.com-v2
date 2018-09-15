@@ -7,14 +7,12 @@ const env = require('./lib/env');
 
 const babelOptions = {
     presets : [
-        'es2015',
-        'react',
-        'flow'
+        '@babel/react',
+        '@babel/flow'
     ],
     plugins : [
         'react-hot-loader/babel',
-        'transform-object-rest-spread',
-        'transform-class-properties'
+        '@babel/plugin-proposal-class-properties'
     ]
 };
 

@@ -7,6 +7,7 @@ const path = require('path');
 require('dotenv').config();
 
 let config = merge(common, {
+    mode: 'development',
     entry : [
         'react-hot-loader/patch',
         './src/index.js'
@@ -28,13 +29,7 @@ let config = merge(common, {
         }
     },
     plugins : [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new webpack.DefinePlugin({
-            'process.env' : {
-                NODE_ENV : JSON.stringify('development')
-            }
-        })
+        new webpack.HotModuleReplacementPlugin()
     ]
 });
 

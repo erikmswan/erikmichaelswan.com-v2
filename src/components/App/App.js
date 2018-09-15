@@ -11,9 +11,9 @@ import { Masthead } from 'components';
 // saving redux state for hot reloading
 // save individual stores
 if (process.env.NODE_ENV !== 'production') {
-    store.subscribe(() => {
-        window[constants.storage] = store.getState();
-    });
+  store.subscribe(() => {
+    window[constants.storage] = store.getState();
+  });
 }
 
 
@@ -28,17 +28,17 @@ type Props = {
 
 export class App extends React.Component<Props> {
 
-    constructor(props: Props): void {
-        super(props);
-    }
+  constructor(props: Props): void {
+    super(props);
+  }
 
-    render(): React.Node {
-        return (
-            <div>
-                <Masthead />
-            </div>
-        );
-    }
+  render(): React.Node {
+    return (
+      <div>
+        <Masthead />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -26,8 +26,8 @@
     ],
     "settings": {
          "react": {
-            "pragma": "React",  // Pragma to use, default to "React"
-            "version": "15.0" // React version, default to the latest React stable release
+            "pragma": "React",
+            "version": "15.0"
         }
     },
     "rules": {
@@ -36,7 +36,7 @@
         ],
         "indent": [
             "error",
-            4,
+            2,
             { "SwitchCase": 1 }
         ],
         "linebreak-style": [
