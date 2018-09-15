@@ -3,3 +3,12 @@ body {
   font-family: $base-font-family;
   color: $gray-165;
 }
+
+h1, h2 {
+  font-weight: 400;
+}
+
+a { 
+  color: $gray-165;
+  font-weight: 600;
+}

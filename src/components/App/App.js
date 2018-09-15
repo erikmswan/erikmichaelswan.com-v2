@@ -36,7 +36,7 @@ export class App extends React.Component<Props> {
     return (
       <div className="app-container">
         <h1>
-          Hi, I'm Erik&nbsp;Michael&nbsp;Swan
+          Hi, I'm Erik&nbsp;Michael&nbsp;Swan.
         </h1>
         <h2>I make user interfaces for the web.</h2>
         <a href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
