@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 
 let config = merge(common, {
     entry: {
-        app    : ['./src/client/index.js'],
+        app    : ['./src/index.js'],
         vendor : [
             'lodash',
             'react',

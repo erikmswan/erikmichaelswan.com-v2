@@ -10,8 +10,7 @@
   "scripts": {
     "start": "webpack --config webpack.prod.js",
     "start:dev": "webpack-dev-server --inline --progress --colors --config webpack.dev.js",
-    "flow": "flow",
-    "clean": "rm -r dist/*"
+    "flow": "flow"
   },
   "dependencies": {
     "classnames": "^2.2.5",

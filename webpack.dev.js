@@ -9,7 +9,7 @@ require('dotenv').config();
 let config = merge(common, {
     entry : [
         'react-hot-loader/patch',
-        './src/client/index.js'
+        './src/index.js'
     ],
     output: {
         filename : 'bundle.js'

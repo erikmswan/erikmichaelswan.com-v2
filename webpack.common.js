@@ -20,7 +20,7 @@ const babelOptions = {
 
 let config = {
     output: {
-        path: path.resolve(__dirname, 'dist/client')
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
@@ -57,7 +57,7 @@ let config = {
                     }, {
                         loader: 'sass-loader',
                         options: {
-                            includePaths: [path.resolve(__dirname, 'src/client/common/styles')]
+                            includePaths: [path.resolve(__dirname, 'src/common/styles')]
                         }
                     }
                 ]
@@ -127,12 +127,12 @@ let config = {
         new HtmlWebpackPlugin({
             title: env.constants.appTitle,
             filename: 'index.html',
-            template: path.resolve(__dirname, 'src/client') + '/index.ejs',
+            template: path.resolve(__dirname, 'src') + '/index.ejs',
             inject: 'body'
         }),
         new CopyWebpackPlugin([
             {
-                from : path.resolve(__dirname, 'src/client/assets'),
+                from : path.resolve(__dirname, 'src/assets'),
                 to   : 'assets'
             }
         ])
@@ -140,11 +140,10 @@ let config = {
     resolve: {
         alias: {
             lib: path.resolve(__dirname, 'lib'),
-            client: path.resolve(__dirname, 'src/client'),
-            assets: path.resolve(__dirname, 'src/client/assets'),
-            components: path.resolve(__dirname, 'src/client/components'),
-            reducers: path.resolve(__dirname, 'src/client/reducers'),
-            styles: path.resolve(__dirname, 'src/client/styles')
+            assets: path.resolve(__dirname, 'src/assets'),
+            components: path.resolve(__dirname, 'src/components'),
+            reducers: path.resolve(__dirname, 'src/reducers'),
+            styles: path.resolve(__dirname, 'src/styles')
         },
         extensions : ['.js', '.css', '.jsx', '.less', '.scss']
     }
