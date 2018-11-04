@@ -7,7 +7,6 @@ import * as React from 'react';
 import { store } from 'reducers';
 import { constants } from 'lib/env';
 
-
 // saving redux state for hot reloading
 // save individual stores
 if (process.env.NODE_ENV !== 'production') {
@@ -16,27 +15,64 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
+export class App extends React.Component {
 
-// types
+  state = {
+    name: 'Erik Michael Swan.'
+  };
+  textCache = 'Erik Michael Swan.';
+  charPool = 'abcdefghijklmnopkrstuvwxyz';
+  upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  lettersToSwitch = 2;
+  timesToAnimate = 2;
+  increment = 90;
 
-type Props = {
-    // nothing yet
-};
+  switchLettersRandomly = () => {
+    const { name } = this.state;
+    let textArray = name.split('');
 
+    this.setBackToNormal();
 
-// component
+    for (let i = 0; i < this.lettersToSwitch; i++) {
+      const thisRandomIndex = this.getRandomNumInRange(name.length - 1);
+      textArray.splice(
+        thisRandomIndex,
+        1,
+        this.decideCase(
+          textArray[thisRandomIndex],
+          this.getRandomChar(this.charPool, this.charPool.length - 1)
+        )
+      );
+    }
 
-export class App extends React.Component<Props> {
+    this.setState({
+      name: textArray.join('')
+    });
+  }
 
-  constructor(props: Props): void {
-    super(props);
+  decideCase = (letterToReplace, replacementLetter) => {
+    return letterToReplace.toLowerCase() === letterToReplace
+      ? replacementLetter
+      : replacementLetter.toUpperCase();
+  }
+  getRandomNumInRange = range => Math.floor(Math.random() * range);
+  getRandomChar = (charPool, range) => charPool[this.getRandomNumInRange(range)];
+  setBackToNormal = () => this.setState({ name: this.textCache });
+
+  sweetLetterEffect = () => {
+    for (let i = 0; i < this.timesToAnimate; i++) {
+      setTimeout(this.switchLettersRandomly, 0 + (this.increment * i));
+    };
+
+    setTimeout(this.setBackToNormal, this.timesToAnimate * this.increment);
   }
 
   render(): React.Node {
+    const { name } = this.state;
     return (
       <div className="app-container">
         <h1>
-          Hi, I'm Erik&nbsp;Michael&nbsp;Swan.
+          Hi, I'm <span onMouseOver={this.sweetLetterEffect}>{name}</span>
         </h1>
         <h2>I make user interfaces for the web.</h2>
         <a href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
