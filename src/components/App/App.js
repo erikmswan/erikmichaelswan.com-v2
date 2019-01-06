@@ -70,6 +70,15 @@ export class App extends React.Component {
 
   render(): React.Node {
     const { name } = this.state;
+
+    const nameJSX = (
+      <a className="name" href="https://www.linkedin.com/in/erikmichaelswan/" target="_blank" rel="noopener noreferrer">
+        <span onMouseOver={this.sweetLetterEffect}>
+          {name}
+        </span>
+      </a>
+    );
+
     return (
       <div className="app-container">
         <h1>
@@ -77,10 +86,10 @@ export class App extends React.Component {
             I wanted to know the name of every stone and flower and insect and bird and beast. I wanted to know where it got its color, where it got its life - but there was no one to tell me.
             – George Washington Carver
           `} />
-          Hi, I'm <span onMouseOver={this.sweetLetterEffect}>{name}</span>
+          Hi, I'm {nameJSX}
         </h1>
         <h2>I make user interfaces and write sometimes.</h2>
-        <a href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
+        <a className="last" href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
       </div>
     );
   }
