@@ -89,7 +89,8 @@ export class App extends React.Component {
           Hi, I'm {nameJSX}
         </h1>
         <h2>I make user interfaces and write sometimes.</h2>
-        <a className="last" href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
+        <a className="email-link" href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
+        <a className="im-hilarious" href="mailto:erikmswan@gmail.com">You didn't know your screen was this dirty, did you?</a>
       </div>
     );
   }

@@ -37,19 +37,27 @@
     margin-bottom: 60px;
   }
   
-  h1, h2, .last {
+  h1, h2, .email-link, .im-hilarious {
     opacity: 0;
     animation: fade-up 3s cubic-bezier(0, 1.2, 1, 1) forwards;
   }
 
   h2 {
-    animation-delay: 2.15s;
+    animation-delay: 2.1s;
   }
 
-  .last {
+  .email-link {
     animation-delay: 4.65s;
     text-decoration: none;
     font-weight: 100;
     font-size: .9em;
+  }
+
+  .im-hilarious {
+    font-weight: 100;
+    font-size: .6em;
+    text-decoration: none;
+    margin-top: 20px;
+    animation-delay: 9s;
   }
 }
