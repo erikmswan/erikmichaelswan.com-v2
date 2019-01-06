@@ -2,6 +2,12 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+
+const cleanOptions = {
+  verbose: true,
+  dry: false
+};
 
 let config = merge(common, {
   mode: 'production',
@@ -24,6 +30,7 @@ let config = merge(common, {
     }
   },
   plugins: [
+    new CleanWebpackPlugin('./dist', cleanOptions),
     new webpack.DefinePlugin({
       'process.env' : {
         NODE_ENV : JSON.stringify('production')

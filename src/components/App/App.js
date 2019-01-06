@@ -5,6 +5,7 @@ import 'styles/main.scss';
 import './App.scss';
 import * as React from 'react';
 import { store } from 'reducers';
+import { HTMLComment } from 'components';
 import { constants } from 'lib/env';
 
 // saving redux state for hot reloading
@@ -62,7 +63,7 @@ export class App extends React.Component {
   sweetLetterEffect = () => {
     for (let i = 0; i < this.timesToAnimate; i++) {
       setTimeout(this.switchLettersRandomly, 0 + (this.increment * i));
-    };
+    }
 
     setTimeout(this.setBackToNormal, this.timesToAnimate * this.increment);
   }
@@ -72,9 +73,13 @@ export class App extends React.Component {
     return (
       <div className="app-container">
         <h1>
+          <HTMLComment text={`
+            I wanted to know the name of every stone and flower and insect and bird and beast. I wanted to know where it got its color, where it got its life - but there was no one to tell me.
+            – George Washington Carver
+          `} />
           Hi, I'm <span onMouseOver={this.sweetLetterEffect}>{name}</span>
         </h1>
-        <h2>I make user interfaces for the web.</h2>
+        <h2>I make user interfaces and write sometimes.</h2>
         <a href="mailto:erikmswan@gmail.com">Tell me what you're thinking.</a>
       </div>
     );
